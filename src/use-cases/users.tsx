@@ -12,7 +12,6 @@ import { getFileUrl, uploadFileToBucket } from "@/lib/files";
 import { env } from "@/env";
 import {
   createAccount,
-  createAccountViaGithub,
   createAccountViaGoogle,
   updatePassword,
 } from "@/data-access/accounts";
@@ -28,7 +27,6 @@ import {
   updateProfile,
 } from "@/data-access/profiles";
 import { GoogleUser } from "@/app/api/login/google/callback/route";
-import { GitHubUser } from "@/app/api/login/github/callback/route";
 import { sendEmail } from "@/lib/send-email";
 import {
   createPasswordResetToken,
@@ -162,20 +160,6 @@ export async function updateProfileNameUseCase(
   displayName: string
 ) {
   await updateProfile(userId, { displayName });
-}
-
-export async function createGithubUserUseCase(githubUser: GitHubUser) {
-  let existingUser = await getUserByEmail(githubUser.email);
-
-  if (!existingUser) {
-    existingUser = await createUser(githubUser.email);
-  }
-
-  await createAccountViaGithub(existingUser.id, githubUser.id);
-
-  await createProfile(existingUser.id, githubUser.login, githubUser.avatar_url);
-
-  return existingUser.id;
 }
 
 export async function createGoogleUserUseCase(googleUser: GoogleUser) {
