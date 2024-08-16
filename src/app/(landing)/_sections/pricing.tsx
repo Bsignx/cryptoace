@@ -20,7 +20,7 @@ function PricingCard({
   features: string[];
 }) {
   return (
-    <div className="flex flex-col w-fit p-6 text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+    <div className="flex flex-col w-fit p-6 text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-zinc-600 xl:p-8 dark:bg-zinc-800 dark:text-white">
       <h3 className="text-2xl font-semibold">{title}</h3>
 
       <div className="flex flex-col items-center my-8">
@@ -71,7 +71,7 @@ export function PricingSection({
   hasSubscription: boolean;
 }) {
   return (
-    <section className="bg-white dark:bg-gray-900" id="pricing">
+    <section className="bg-white dark:bg-background" id="pricing">
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
         <div className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
           <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">

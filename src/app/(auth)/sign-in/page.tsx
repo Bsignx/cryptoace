@@ -28,7 +28,7 @@ export default function SignInPage() {
               "w-full"
             )}
           >
-            <GoogleIcon className="stroke-white mr-2 h-5 w-5" />
+            <GoogleIcon className="mr-2 h-5 w-5 fill-black dark:fill-white" />
             Sign in with Google
           </Link>
 
