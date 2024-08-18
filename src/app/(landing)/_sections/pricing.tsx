@@ -79,7 +79,7 @@ export function PricingSection({
           </h2>
         </div>
 
-        <div className="flex justify-center mx-auto gap-8">
+        <div className="flex justify-center mx-auto gap-8 flex-wrap">
           {/* <PricingCard
             title="Free"
             price="0"

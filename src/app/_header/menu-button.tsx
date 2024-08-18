@@ -6,7 +6,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { BookIcon, MenuIcon, SearchIcon, UsersIcon } from "lucide-react";
+import {
+  BarChart,
+  CreditCard,
+  LayoutDashboard,
+  LogOut,
+  MenuIcon,
+  Settings2Icon,
+} from "lucide-react";
 import Link from "next/link";
 
 export function MenuButton() {
@@ -15,26 +22,61 @@ export function MenuButton() {
       <DropdownMenuTrigger>
         <MenuIcon />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="space-y-2">
+      <DropdownMenuContent className="space-y-3 px-4 py-3 flex-col flex">
         <DropdownMenuItem asChild>
-          <Link
-            href="/dashboard"
-            className="flex gap-2 items-center cursor-pointer"
-          >
-            <UsersIcon className="w-4 h-4" /> Your Groups
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <div className="flex items-center justify-start gap-2">
+                <LayoutDashboard className="w-4 h-4" /> Tools
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href="/dashboard" className="flex gap-2 items-center">
+                  <Settings2Icon className="w-4 h-4" /> Settings
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href="/api/auth/signout?callbackUrl=/"
+                  className="flex gap-2 items-center"
+                >
+                  <LogOut className="w-4 h-4" /> Sign Out
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <div className="flex items-center justify-start gap-2">
+                <BarChart className="w-4 h-4" /> Analysis
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href="/browse" className="flex gap-2 items-center">
+                  <Settings2Icon className="w-4 h-4" /> Settings
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href="/api/auth/signout?callbackUrl=/"
+                  className="flex gap-2 items-center"
+                >
+                  <LogOut className="w-4 h-4" /> Sign Out
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link
-            href="/browse"
-            className="flex gap-2 items-center cursor-pointer"
+            href="/docs"
+            className="flex gap-2 items-center justify-start cursor-pointer pl-0"
           >
-            <SearchIcon className="w-4 h-4" /> Browse Groups
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/docs" className="flex gap-2 items-center cursor-pointer">
-            <BookIcon className="w-4 h-4" /> API Docs
+            <CreditCard className="w-4 h-4" /> Subscription
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
