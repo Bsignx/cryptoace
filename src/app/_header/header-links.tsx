@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import useMediaQuery from "@/hooks/use-media-query";
-import { BookIcon, SearchIcon, UsersIcon } from "lucide-react";
+import { LayoutDashboard, BarChart, CreditCard } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -23,7 +23,7 @@ export function HeaderLinks({ isAuthenticated }: { isAuthenticated: boolean }) {
             className="flex items-center justify-center gap-2"
           >
             <Link href={"/dashboard"}>
-              <UsersIcon className="w-4 h-4" /> Your Groups
+              <LayoutDashboard className="w-4 h-4" /> Tools
             </Link>
           </Button>
 
@@ -33,7 +33,7 @@ export function HeaderLinks({ isAuthenticated }: { isAuthenticated: boolean }) {
             className="flex items-center justify-center gap-2"
           >
             <Link href={"/browse"}>
-              <SearchIcon className="w-4 h-4" /> Browse Groups
+              <BarChart className="w-4 h-4" /> Analysis
             </Link>
           </Button>
 
@@ -43,7 +43,7 @@ export function HeaderLinks({ isAuthenticated }: { isAuthenticated: boolean }) {
             className="flex items-center justify-center gap-2"
           >
             <Link href={"/docs"}>
-              <BookIcon className="w-4 h-4" /> API Docs
+              <CreditCard className="w-4 h-4" /> Subscription
             </Link>
           </Button>
         </div>
