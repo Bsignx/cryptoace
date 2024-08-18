@@ -1,8 +1,20 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import useMediaQuery from "@/hooks/use-media-query";
-import { LayoutDashboard, BarChart, CreditCard } from "lucide-react";
+import {
+  LayoutDashboard,
+  BarChart,
+  CreditCard,
+  Settings2Icon,
+  LogOut,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -16,31 +28,57 @@ export function HeaderLinks({ isAuthenticated }: { isAuthenticated: boolean }) {
   return (
     <>
       {!isLandingPage && isAuthenticated && (
-        <div className="flex items-center gap-2">
-          <Button
-            variant={"link"}
-            asChild
-            className="flex items-center justify-center gap-2"
-          >
-            <Link href={"/dashboard"}>
-              <LayoutDashboard className="w-4 h-4" /> Tools
-            </Link>
-          </Button>
+        <div className="flex items-center gap-9">
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <div className="flex items-center justify-start gap-2">
+                <LayoutDashboard className="w-4 h-4" /> Tools
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href="/dashboard" className="flex gap-2 items-center">
+                  <Settings2Icon className="w-4 h-4" /> Settings
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href="/api/auth/signout?callbackUrl=/"
+                  className="flex gap-2 items-center"
+                >
+                  <LogOut className="w-4 h-4" /> Sign Out
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <div className="flex items-center justify-start gap-2">
+                <BarChart className="w-4 h-4" /> Analysis
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href="/browse" className="flex gap-2 items-center">
+                  <Settings2Icon className="w-4 h-4" /> Settings
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href="/api/auth/signout?callbackUrl=/"
+                  className="flex gap-2 items-center"
+                >
+                  <LogOut className="w-4 h-4" /> Sign Out
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <Button
             variant={"link"}
             asChild
-            className="flex items-center justify-center gap-2"
-          >
-            <Link href={"/browse"}>
-              <BarChart className="w-4 h-4" /> Analysis
-            </Link>
-          </Button>
-
-          <Button
-            variant={"link"}
-            asChild
-            className="flex items-center justify-center gap-2"
+            className="flex items-center justify-start gap-2 pl-0"
           >
             <Link href={"/docs"}>
               <CreditCard className="w-4 h-4" /> Subscription
