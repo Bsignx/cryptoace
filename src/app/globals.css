@@ -106,7 +106,7 @@
     margin-top: 0.75em;
   }
 
-  @apply bg-gray-200 dark:bg-slate-950 rounded p-8 overflow-scroll h-[400px];
+  @apply bg-gray-200 dark:bg-zinc-950 rounded p-8 overflow-scroll h-[400px];
 
   ul {
     padding: 0 1rem;
@@ -188,13 +188,13 @@
 }
 
 .tiptap__buttons button {
-  @apply px-2 py-1 bg-slate-200 hover:bg-slate-200/80 dark:bg-slate-400 border rounded text-black;
+  @apply px-2 py-1 bg-zinc-200 hover:bg-zinc-200/80 dark:bg-zinc-400 border rounded text-black;
 
   &.is-active {
-    @apply bg-slate-100;
+    @apply bg-zinc-100;
   }
 
   &:hover {
-    @apply bg-slate-200;
+    @apply bg-zinc-200;
   }
 }

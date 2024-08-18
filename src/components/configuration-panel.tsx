@@ -17,7 +17,7 @@ export function ConfigurationPanel({
         "border-red-500": variant === "destructive",
       })}
     >
-      <div className="border-b px-4 py-2 sm:px-6 md:py-3 bg-gray-200 dark:bg-gray-800 rounded-t-md">
+      <div className="border-b px-4 py-2 sm:px-6 md:py-3 bg-gray-200 dark:bg-zinc-800 rounded-t-md">
         <span className="text-base sm:text-lg font-medium mb-4">{title}</span>
       </div>
       <div className="p-4 sm:px-6">

@@ -29,7 +29,7 @@ export async function Header() {
   return (
     <div className="border-b py-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex gap-8 items-center">
+        <div className="flex gap-12 items-center">
           <Link href="/" className="flex gap-2 items-center text-xl">
             <Logo />
           </Link>

@@ -48,7 +48,7 @@ export function NewsletterForm() {
           required
           type="email"
           name="email"
-          className="text max-w-[320px] dark:bg-slate-100 dark:text-slate-900 dark:placeholder-slate-600"
+          className="text max-w-[320px] dark:bg-zinc-100 dark:text-zinc-900 dark:placeholder-zinc-600"
           id="email"
           placeholder="Enter your email address"
         />

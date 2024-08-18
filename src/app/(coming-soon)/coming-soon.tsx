@@ -5,7 +5,7 @@ import Image from "next/image";
 export function Lines() {
   return (
     <svg
-      className="absolute inset-0 z-10 h-full w-full stroke-slate-100 dark:stroke-slate-800"
+      className="absolute inset-0 z-10 h-full w-full stroke-zinc-100 dark:stroke-zinc-800"
       aria-hidden="true"
     >
       <defs>
@@ -33,7 +33,7 @@ export function Lines() {
 export function ComingSoon() {
   return (
     <>
-      <section className="relative pt-12 min-h-screen gap-8 bg-gradient-to-b dark:from-slate-900 dark:to-slate-800 from-green-200 to-blue-100 shadow-md">
+      <section className="relative pt-12 min-h-screen gap-8 bg-gradient-to-b dark:from-zinc-900 dark:to-zinc-800 from-green-200 to-blue-100 shadow-md">
         <Lines />
 
         <ComingSoonHeader />
@@ -73,7 +73,7 @@ export function ComingSoon() {
         </div>
       </section>
 
-      <section className="border-slate-400 border-t border-b dark:border-slate-500 relative py-12 dark:bg-gray-950 shadow-sm bg-repeat bg-paper dark:bg-plus">
+      <section className="border-zinc-400 border-t border-b dark:border-zinc-500 relative py-12 dark:bg-gray-950 shadow-sm bg-repeat bg-paper dark:bg-plus">
         <div className="container mx-auto max-w-4xl pt-12 dark:text-gray-200">
           <h2 className="text-5xl mb-8 font-bold">
             What I&apos;m working on 🛠️
