@@ -5,10 +5,10 @@ import { ReactNode } from "react";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="relative bg-gradient-to-b dark:from-slate-900 dark:to-slate-800 from-green-200 to-blue-100 shadow-md">
-      <Lines />
+    <div className="relative dark:bg-background shadow-md">
+      {/* <Lines /> */}
       {appConfig.mode === "comingSoon" && <ComingSoonHeader />}
-      <div className="relative z-20 mx-auto container prose dark:prose-invert py-12 ">
+      <div className="relative z-20 mx-auto container prose dark:prose-invert py-12">
         {children}
       </div>
     </div>

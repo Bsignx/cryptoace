@@ -37,7 +37,7 @@ export default function SignInPage() {
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-gray-100 px-2 text-gray-500 dark:bg-gray-950 dark:text-gray-400">
+              <span className="bg-gray-100 px-2 text-gray-500 dark:bg-gray-950 dark:text-gray-300">
                 Or sign in with email
               </span>
             </div>
@@ -50,7 +50,7 @@ export default function SignInPage() {
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-gray-100 px-2 text-gray-500 dark:bg-gray-950 dark:text-gray-400">
+              <span className="bg-gray-100 px-2 text-gray-500 dark:bg-gray-950 dark:text-gray-300">
                 Other options
               </span>
             </div>

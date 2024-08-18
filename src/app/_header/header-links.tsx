@@ -59,9 +59,9 @@ export function HeaderLinks({ isAuthenticated }: { isAuthenticated: boolean }) {
             <Link href="/#pricing">Pricing</Link>
           </Button>
 
-          <Button variant={"link"} asChild>
+          {/* <Button variant={"link"} asChild>
             <Link href={"/browse"}>Browse Groups</Link>
-          </Button>
+          </Button> */}
         </div>
       )}
     </>
