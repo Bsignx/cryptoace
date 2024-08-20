@@ -38,15 +38,7 @@ export function HeaderLinks({ isAuthenticated }: { isAuthenticated: boolean }) {
             <DropdownMenuContent>
               <DropdownMenuItem>
                 <Link href="/dashboard" className="flex gap-2 items-center">
-                  <Settings2Icon className="w-4 h-4" /> Settings
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link
-                  href="/api/auth/signout?callbackUrl=/"
-                  className="flex gap-2 items-center"
-                >
-                  <LogOut className="w-4 h-4" /> Sign Out
+                  <Settings2Icon className="w-4 h-4" /> Portfolio
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>

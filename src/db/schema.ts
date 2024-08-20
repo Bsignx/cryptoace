@@ -245,6 +245,30 @@ export const followingRelationship = relations(following, ({ one }) => ({
   }),
 }));
 
+// crypto portfolio schemas and relationships
+export const wallets = pgTable("gf_wallets", {
+  id: serial("id").primaryKey(),
+  userId: serial("userId")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  name: text("name").notNull(),
+});
+
+export const transactions = pgTable("gf_transactions", {
+  id: serial("id").primaryKey(),
+  walletId: serial("walletId")
+    .notNull()
+    .references(() => wallets.id, { onDelete: "cascade" }),
+  coin: text("coin").notNull(),
+  amount: integer("amount").notNull(),
+  price: integer("price").notNull(),
+  date: timestamp("date", { mode: "date" }).notNull(),
+});
+
+export const walletRelations = relations(wallets, ({ many }) => ({
+  transactions: many(transactions),
+}));
+
 /**
  * TYPES
  *
@@ -274,3 +298,6 @@ export type NewReply = typeof reply.$inferInsert;
 export type Following = typeof following.$inferSelect;
 
 export type GroupId = Group["id"];
+
+export type Wallet = typeof wallets.$inferSelect;
+export type Transaction = typeof transactions.$inferSelect;
