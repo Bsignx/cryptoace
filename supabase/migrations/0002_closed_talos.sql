@@ -1,0 +1,1 @@
+ALTER TABLE "gf_transactions" ADD COLUMN "description" text DEFAULT '';

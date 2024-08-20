@@ -1,7 +1,14 @@
 import "dotenv/config";
 
 import { database, pg } from "./index";
-import { accounts, groups, profiles, users } from "@/db/schema";
+import {
+  accounts,
+  groups,
+  profiles,
+  users,
+  wallets,
+  transactions,
+} from "@/db/schema";
 
 async function main() {
   const [user] = await database
@@ -10,7 +17,6 @@ async function main() {
       email: "testing@example.com",
       emailVerified: undefined,
     })
-    .onConflictDoNothing()
     .returning();
 
   const [account] = await database
@@ -45,6 +51,23 @@ async function main() {
       userId: user.id,
     })
     .returning();
+
+  const [wallet] = await database
+    .insert(wallets)
+    .values({
+      userId: user.id,
+      name: "Test Wallet",
+    })
+    .returning();
+
+  const [transaction] = await database.insert(transactions).values({
+    walletId: wallet.id,
+    amount: 1000,
+    description: "Initial deposit",
+    coin: "usd",
+    price: 100000,
+    date: new Date(),
+  });
 
   await pg.end();
 }

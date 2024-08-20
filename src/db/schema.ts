@@ -263,6 +263,7 @@ export const transactions = pgTable("gf_transactions", {
   amount: integer("amount").notNull(),
   price: integer("price").notNull(),
   date: timestamp("date", { mode: "date" }).notNull(),
+  description: text("description").default(""),
 });
 
 export const walletRelations = relations(wallets, ({ many }) => ({
