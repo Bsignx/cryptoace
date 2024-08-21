@@ -37,7 +37,10 @@ export function HeaderLinks({ isAuthenticated }: { isAuthenticated: boolean }) {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>
-                <Link href="/dashboard" className="flex gap-2 items-center">
+                <Link
+                  href="/tools/portfolios"
+                  className="flex gap-2 items-center"
+                >
                   <Settings2Icon className="w-4 h-4" /> Portfolio
                 </Link>
               </DropdownMenuItem>

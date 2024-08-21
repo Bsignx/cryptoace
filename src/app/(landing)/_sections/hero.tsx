@@ -29,7 +29,7 @@ export function HeroSection() {
             <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 mt-10">
               <SignedIn>
                 <Button asChild>
-                  <Link href={"/dashboard"}>View Dashboard</Link>
+                  <Link href={"/tools/portfolios"}>View Portfolio</Link>
                 </Button>
               </SignedIn>
 

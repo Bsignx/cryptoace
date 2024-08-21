@@ -13,7 +13,7 @@ export default function SuccessPage() {
         <p>Click below to start using our service</p>
 
         <Button asChild>
-          <Link href={"/dashboard"}>View Dashboard</Link>
+          <Link href={"/tools/portfolios"}>View Portfolio</Link>
         </Button>
       </div>
     </>
